@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings and Privacy</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header Section -->
+    <div class="header">
+      <button class="back-button" onclick="alert('Back button clicked!')">
+        <i class="fas fa-chevron-left"></i> Back
+      </button>
+      <h2>Settings and Privacy</h2>
+    </div>
+
+    <!-- Social Networks Section -->
+    <div class="section social-network">
+      <h3><i class="fas fa-network-wired"></i> Social Networks</h3>
+      <p>Google</p>
+      <button onclick="alert('Disconnecting Google account...')" class="btn">Disconnect Email</button>
+    </div>
+
+    <!-- Account Settings Section -->
+    <div class="section">
+      <h3><i class="fas fa-user"></i> Account Settings</h3>
+      <div class="info">
+        <div>
+          <span><i class="fas fa-phone"></i> Phone number</span>
+          <p>+63******000</p>
+        </div>
+        <button class="btn" onclick="toggleForm('phoneForm')">Change Phone number</button>
+      </div>
+      <div class="form-panel" id="phoneForm">
+        <input type="text" placeholder="Enter new phone number">
+        <button onclick="alert('Phone number updated!')">Save</button>
+      </div>
+
+      <div class="info">
+        <div>
+          <span><i class="fas fa-envelope"></i> Email</span>
+          <p>R*****@gmail.com</p>
+        </div>
+        <button class="btn" onclick="toggleForm('emailForm')">Change Email</button>
+      </div>
+      <div class="form-panel" id="emailForm">
+        <input type="email" placeholder="Enter new email">
+        <button onclick="alert('Email updated!')">Save</button>
+      </div>
+    </div>
+
+    <!-- Password Section -->
+    <div class="section">
+      <h3><i class="fas fa-lock"></i> Password</h3>
+      <div class="info">
+        <div>
+          <span><i class="fas fa-key"></i> Password</span>
+          <p>**********</p>
+        </div>
+        <button class="btn" onclick="toggleForm('passwordForm')">Change Password</button>
+      </div>
+      <div class="form-panel" id="passwordForm">
+        <input type="password" placeholder="Enter new password">
+        <button onclick="alert('Password updated!')">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Toggle visibility of the form panels (for changing phone, email, and password)
+    function toggleForm(formId) {
+      const form = document.getElementById(formId);
+      form.style.display = form.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
+
+/General/
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff; 
+}
+
+/* Container */
+.container {
+  width: 1447px;
+  height: 800px;
+  margin: 20px auto;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 20px;
+  background-color: #f5e29e;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.header h2 {
+  font-size: 18px;
+  color: #333333;
+  margin: 0;
+}
+
+.back-button {
+  position: absolute;
+  left: 10px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #333333;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.back-button i {
+  margin-right: 5px;
+}
+
+/* Section Header */
+.section h3 {
+  font-size: 14px; 
+  color: #555555;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.section h3 i {
+  color: #f2c94c;
+  margin-right: 10px;
+}
+
+/* Social Networks Section (No Background Color) */
+.section.social-network {
+  background-color: transparent;
+  padding: 0;
+  box-shadow: none;
+}
+
+/* Account Settings & Password Sections */
+.section {
+  margin-bottom: 20px;
+  background-color: #fff6d5;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Info Rows */
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.info div {
+  display: flex;
+  flex-direction: column;
+}
+
+.info span {
+  font-size: 14px; 
+  color: #333333;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.info span i {
+  margin-right: 5px;
+  color: #f2c94c; 
+}
+
+.info p {
+  font-size: 14px; 
+  color: #555555;
+  margin: 0;
+}
+
+/* Buttons */
+.btn {
+  padding: 8px 16px;
+  font-size: 14px; /* Set to 14px */
+  background-color: #f2c94c;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: #d7ae42; 
+}
+
+/* Form Panel */
+.form-panel {
+  display: none;
+  margin-top: 10px;
+}
+
+.form-panel input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-size: 14px; 
+}
+
+.form-panel button {
+  padding: 8px 16px;
+  font-size: 14px; 
+  background-color: #6fcf97; 
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.form-panel button:hover {
+  background-color: #57a87d; 
+}
